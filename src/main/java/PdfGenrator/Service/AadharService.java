@@ -65,7 +65,7 @@ public class AadharService {
 		 
 		 
 		 
-		 Resource templateImageResource = resourceLoader.getResource("classpath:HINDI-BLANK.jpeg");
+		 Resource templateImageResource = resourceLoader.getResource("classpath:HINDI_NEW (1).jpg");
 		 
 		 //--File templateFile = templateImageResource.getFile();
 	      
@@ -88,6 +88,15 @@ public class AadharService {
 	        float heightInInches =    1600 / (float) dpi;
 	        float widthInPoints = widthInInches * dpi;
 	        float heightInPoints = heightInInches * dpi;
+	      
+	      
+//	      int dpi = 72;
+//	      float widthInCentimeters = 7;  // Desired width in centimeters
+//	      float heightInCentimeters = 21; // Desired height in centimeters
+//	      float widthInInches = widthInCentimeters / 2.54f; // Convert cm to inches
+//	      float heightInInches = heightInCentimeters / 2.54f; // Convert cm to inches
+//	      float widthInPoints = widthInInches * dpi;
+//	      float heightInPoints = heightInInches * dpi;
 	        
  
             
@@ -106,14 +115,14 @@ public class AadharService {
 
                     contentStream.beginText();
                     contentStream.setFont(PDType1Font.HELVETICA_BOLD, 32);
-                    contentStream.newLineAtOffset(217, 64);
+                    contentStream.newLineAtOffset(217, 57);
                     contentStream.showText(formattedAadharNumber);
                     contentStream.endText();
                     
                     
                     float xStart1 = 200;
                     float xEnd1 = 460;
-                    float y1 = 61; // Adjust this value to position the line below the text
+                    float y1 = 53; // Adjust this value to position the line below the text
 
                     // Draw the line
                     contentStream.setLineWidth(1.0f); // Adjust line width as needed
@@ -134,7 +143,7 @@ public class AadharService {
 
                     contentStream.beginText();
                     contentStream.setFont(PDType1Font.HELVETICA_BOLD, 40);
-                    contentStream.newLineAtOffset(173, 505);
+                    contentStream.newLineAtOffset(173, 497);
                     contentStream.showText(formattedAadharNumber);
                     contentStream.endText();
                     
@@ -142,7 +151,7 @@ public class AadharService {
                  // Calculate the line coordinates
                     float xStart = 160;
                     float xEnd = 480;
-                    float y = 502; // Adjust this value to position the line below the text
+                    float y = 493; // Adjust this value to position the line below the text
 
                     // Draw the line
                     contentStream.setLineWidth(1.0f); // Adjust line width as needed
@@ -158,7 +167,7 @@ public class AadharService {
            
                     contentStream.beginText();
                     contentStream.setFont(PDType1Font.HELVETICA, 22);
-                    contentStream.newLineAtOffset(374, 1154); // Adjust the coordinates as needed
+                    contentStream.newLineAtOffset(370, 1160); // Adjust the coordinates as needed
                     contentStream.showText(formattedEnrolmentNumber);
                     contentStream.endText();
                     
@@ -240,14 +249,13 @@ public class AadharService {
                  contentStream.showText(genderText);
                  contentStream.endText();
                  
-                 
-                 
+    
                  
                  String textToPrint = "To";
 
                  contentStream.beginText();
                  contentStream.setFont(PDType1Font.HELVETICA, 21);
-                 contentStream.newLineAtOffset(120, 1110); // Replace x and y with the desired coordinates
+                 contentStream.newLineAtOffset(120, 1106); // Replace x and y with the desired coordinates
                  contentStream.showText(textToPrint);
                  contentStream.endText();
                  
@@ -255,13 +263,13 @@ public class AadharService {
                  
                  contentStream.beginText();
                  contentStream.setFont(odiaFont, 23);
-                 contentStream.newLineAtOffset(120, 1083); // Adjust the coordinates
+                 contentStream.newLineAtOffset(120, 1079); // Adjust the coordinates
                  contentStream.showText(odiaText);
                  contentStream.endText();
 
                     // Split and format the address
                     String[] addressParts = aadharInfo.getAddress().split(",");
-                    float yCoordinate = 1056;
+                    float yCoordinate = 1052;
                     for (String part : addressParts) {
                         contentStream.beginText();
                         contentStream.setFont(PDType1Font.HELVETICA, 21);
@@ -312,9 +320,7 @@ public class AadharService {
                 Resource pdfResource = new FileSystemResource(outputFile);
 
                 return pdfResource;
-
-
-                
+         
                 
             } catch (IOException e) {
                 // Handle the exception
@@ -326,9 +332,7 @@ public class AadharService {
             
  }      
             
-            
-            
-	        
+       
 	        
 
 //                // Load the template image onto the PDF

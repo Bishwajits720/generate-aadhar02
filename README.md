@@ -1,1 +1,0 @@
-# generate-aadhar02
