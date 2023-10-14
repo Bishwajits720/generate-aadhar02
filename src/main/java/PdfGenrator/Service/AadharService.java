@@ -65,7 +65,7 @@ public class AadharService {
 		 
 		 
 		 
-		 Resource templateImageResource = resourceLoader.getResource("classpath:HINDI_NEW (1).jpg");
+		 Resource templateImageResource = resourceLoader.getResource("classpath:HINDI-yes.jpg");
 		 
 		 //--File templateFile = templateImageResource.getFile();
 	      
